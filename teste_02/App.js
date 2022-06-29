@@ -1,20 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View, TextInput, Button } from 'react-native';
+import { useState } from 'react';
 
-export default function App() {
+export default () => {
+  const [numero, setNumero] = useState(0);
+  const [dobro, setDobro] = useState(0);
+
+  function dobro2(){
+    setDobro(parseInt(numero)*2)
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View>
+      <Text>Cálculo do Dobro</Text>
+      <TextInput testID="entrada" placeholder='Digite um número: ' onChangeText={setNumero}/>
+      <Button title="Calcular" onPress={dobro2} testID="calc" />
+      <Text testID="resultado">{dobro}</Text>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
