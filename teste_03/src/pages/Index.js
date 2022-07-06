@@ -4,7 +4,7 @@ export default props => {
     return (
         <View>
             <Text>Tela Inicial</Text>
-                <Button title="Ir para Dobro" onPress={() => { props.navigation.navigate("Dobro"); }} />
+                <Button title="Ir para Dobro" onPress={() => { props.navigation.navigate("Dobro"); }} testID='btnIndex' />
         </View>
     )
 }
